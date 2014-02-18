@@ -14,8 +14,8 @@ import org.lisaacademy.robotics.theTerminator.Robot;
 /**
  *
  */
-public class  RaseLeg extends Command {
-    public RaseLeg() {
+public class  KickerDefault extends Command {
+    public KickerDefault() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
 	
@@ -25,9 +25,9 @@ public class  RaseLeg extends Command {
     }
     // Called just before this Command runs the first time
     protected void initialize() {
-        for(int i=0; i<10; i++) {
+        for(;;) {
             try {
-                Robot.kicker.setX(-.3);
+                Robot.kicker.setX(0);
                 break;
             } catch (CANTimeoutException ex) {
                 ex.printStackTrace();
